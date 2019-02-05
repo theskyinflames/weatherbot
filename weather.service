@@ -1,0 +1,23 @@
+[Unit]
+Description=ForecastBot
+After=network.target
+
+[Service]
+Type=simple
+# Another Type option: forking
+User=theskyinflames
+WorkingDirectory=/home/theskyinflames
+ExecStart=/home/theskyinflames/forecastbot
+Restart=always
+# Other Restart options: or always, on-abort, etc
+
+Environment=TWITTER_CONSUMER_KEY=UxHT6GfY32zSPZDBI4xFNw7bQ
+Environment=TWITTER_CONSUMER_SECRET=Hotp9OalPGKQ1qu59zl7f7BDQEWEA3yyzcQPz32EnzbWxsrZkc
+Environment=TWITTER_ACCESS_TOKEN=1091733526628708353-CNFEo9xSUYJTMiBLfkwSwcMZQ7roKo
+Environment=TWITTER_ACCESS_TOKEN_SECRET=DbqnQ2lQWyd4WfQExCsLra7DX3zQqcgr9n4Fnnm4Zr9Og
+Environment=OPENWEATHERMAP_APPID=965a3b91f20cbe7952e93e7113efd6cf
+Environment=SERVICE_PUBLISHING_INTERVAL=60
+Environment=WEATHER_CITY=Pineda de mar
+
+[Install]
+WantedBy=multi-user.target
